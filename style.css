@@ -1,0 +1,52 @@
+body {
+  
+}
+#cv-form {
+  /* display: none; */
+  /* margin-top: 10px; */
+}
+#cv-template {
+  display: none;
+}
+.myimg {
+  /* border: 1px solid red; */
+  border-radius: 50%;
+  width: 150px;
+  display: inline-block;
+  margin-left: 10px;
+  /* padding-top: 40px; */
+  margin-top: 40px;
+}
+
+/* .backgroundt {
+  background-color: black;
+  color: white;
+} */
+
+.gbttn{
+  margin-top: 25px;
+}
+.header1{
+  display: inline-block;
+  
+  font-weight: bolder;
+  font-size: 30px;
+  
+}
+.card-header{
+  margin-top: 30px;
+}
+.details{
+  margin-top: 20px;
+  padding-top: 10px;
+}
+.imgg{
+  
+  size: 20%;
+  width: 100%;
+}
+.uem{
+  text-align: center;
+  padding-bottom: 0;
+  padding-top: 40px;
+}
