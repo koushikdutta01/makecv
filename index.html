@@ -1,179 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Rendering Crew</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <title>Make CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Berkshire+Swash&family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- here goes html code  -->
+    <section id="title">
+      <div class="container-fluid">
+        <!-- Nav Bar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="">Rendering Crew</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#footer">Contacts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#blog">Blog</a>
+                </li>
+              </ul>
+          </div>
+        </nav>
 
-    <div class="mx-5 mt-3" id="cv-form">
-      <div class="card-header">
-        <h1 class="text-center my-2">Make CV</h1>
-        <p class="text-center">Helps you create CVs in no time</p>
-
-        <div class="row ">
-          <div class="col-sm-4">
-            <img src="images/11.png" class="imgg" alt="">
-          </div>
-          <div class="col-sm-4">
-            <img src="images/21.png" class="imgg" alt="">
-          </div>
-          <div class="col-sm-4">
-            <img src="images/31.png" class="imgg" alt="">
-          </div>
-          
-        </div>
+        <div class="row" id="tagline">
+            <h1>Create CVs in no time!!</h1>
+            <h2>We create your own Curriculum Vitae, in just a few clicks!</h2>
+        </div>    
       </div>
+    </section>
+    <section id="examples">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="true" data-interval="500" data-pause="hover" data-keyboard="True" data-touch="True">
+        <div class="carousel-inner">
+          <div class="carousel-item active car-text">
+            <h1>Quick</h1>
+          </div>
+          <div class="carousel-item car-text">
+            <h1>Easy</h1>
+          </div>
+          <div class="carousel-item car-text">
+            <h1>Affordable</h1>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon car-btn" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    
+    <div class="card mx-5 mt-3" id="cv-form">
       <div class="card-body">
-        <div class="container" >
-        
-          <div >
-            <div>
-              <!-- first col -->
-              <h3></h3>
-
-              <div class="form-group">
-                <label for="nameField">Your Name</label>
-                <input
-                  type="text"
-                  id="nameField"
-                  placeholder="Enter here (Required Field)"
-                  class="form-control"
-                  required/>
+        <div class="container" >   
+            <form onsubmit="return formValid()" class="needs-validation" novalidate>
+              <div class="form-group has-validation">
+                <label for="nameField" class="form-label">Your Name</label>
+                <input type="text" placeholder="Name" pattern="[A-Za-z]*" id="nameField" class="form-control" value="Someone" required>
+                <div class="invalid-feedback">
+                  Please enter a valid name
+                </div>
               </div>
-
-             
-
-              <div class="form-group mt-2">
+              <div class="form-group mt-2 has-validation">
                 <label for="contactField">Your Contact</label>
-                <input
-                  type="text" 
-                  id="contactField"
-                  placeholder="Enter here (Required Field)"
-                  class="form-control"
-                  required />
+                <input type="number" placeholder="Phone number" pattern="[0-9]*" id="contactField" class="form-control" value="0000000000" required >
+                <div class="invalid-feedback">
+                  Please enter a valid phone number
+                </div>
               </div>
-
-              <div class="form-group">
+              <div class="form-group has-validation">
                 <label for="emailfield">Your Email Id</label>
-                <input 
-                type="text"
-                id="emailfield"
-                placeholder="Enter here (Required Field)"
-                class="form-control"
-                required />
+                <input type="email" placeholder="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" id="emailfield" class="form-control" value="someone@example.com" required>
+                <div class="invalid-feedback">
+                  Please enter a valid email
+                </div>
               </div>
-
-              <div class="form-group mt-2">
+              <div class="form-group mt-2 has-validation">
                 <label for="addressField">Your Address</label>
-                <textarea
-                  id="addressField"
-                  placeholder="Enter here (Required Field)"
-                  class="form-control"
-                  rows="5"
-                  required ></textarea>
+                <textarea placeholder="Address" id="addressField" class="form-control" rows="5" required>4,Richmond Park</textarea>
+                <div class="invalid-feedback">
+                  Please enter a valid
+                </div>
               </div>
 
-              <div class="form-group mt-3">
-                <label for="">Select your photo (1:1 or square image)</label>
-                <input id="imgField" type="file" placeholder="Enter here (Required Field)" class="form-control" required/>
+              <div class="form-group mt-3 has-validation">
+                <label for="">Select your photo</label>
+                <input id="imgField" type="file" placeholder="Enter here (Required Field)" class="form-control" required>
+                <div class="invalid-feedback">
+                  Please enter your photo
+                </div>
               </div>
-
-              
-            </div>
-            <div >
-              <!-- second col -->
-              
-
+            </form>
+          
+            <form>
               <div class="form-group mt-2">
                 <label for="">About Yourself</label>
-                <textarea
-                  id="objectiveField"
-                  rows="5"
-                  placeholder="Enter here (Required Field)"
-                  class="form-control"
-                ></textarea>
+                <textarea id="objectiveField" rows="5" placeholder="Enter here" class="form-control"></textarea>
               </div>
-
               <div class="form-group mt-2" id="we">
                 <label for="">Work Experience</label>
-                <textarea
-                  placeholder="Enter here (Required Field)"
-                  class="form-control weField"
-                  rows="3"
-                  required></textarea>
-
-                <!-- new textarea -->
-
+                <textarea id="WorkExp" placeholder="Enter here" class="form-control weField" rows="3"></textarea>
                 <div class="container text-center mt-2" id="weAddButton">
-                  <button
-                    onclick="addNewWEField()"
-                    class="btn btn-dark btn-sm"
-                  >
+                  <button onclick="addNewWEField()" class="btn btn-dark btn-sm">
                     Add More
                   </button>
                 </div>
               </div>
               <div class="form-group mt-2" id="skill">
                 <label for="">Skills Sets</label>
-                <textarea
-                  placeholder="Enter here (Required Field)"
-                  class="form-control skillField"
-                  rows="1"
-                  required></textarea>
-
+                <textarea id="skl" placeholder="Skills" class="form-control skillField" rows="1" required></textarea>
                 <div class="container text-center mt-2" id="skillAddButton">
-                  <button
-                    onclick="addNewskillField()"
-                    class="btn btn-dark btn-sm"
-                  >
+                  <button onclick="addNewskillField()" class="btn btn-dark btn-sm">
                     Add More
                   </button>
                 </div>
               </div>
               <div class="form-group mt-2" id="aq">
                 <label for="">Academic Qualification</label>
-                <textarea
-                  placeholder="Enter here (Required Field)"
-                  class="form-control eqField"
-                  rows="3"
-                  required></textarea>
-
+                <textarea id="aqua" placeholder="Enter here" class="form-control eqField" rows="3" required></textarea>
                 <div class="container text-center mt-2" id="aqAddButton">
-                  <button
-                    onclick="addNewAQField()"
-                    class="btn btn-dark btn-sm"
-                  >
+                  <button onclick="addNewAQField()" class="btn btn-dark btn-sm">
                     Add More
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
-          <div>
-            <p class="uem">Made with ❤️ at UEM</p>
-          </div>
+            </form>      
+          
 
           <div class="container text-center mt-3">
-            <button onclick="generateCV()" class="btn btn-dark btn-lg gbttn  " type="submit">
-              Create CV
+            <button onclick="chooseCV()" id="submitBtn" class="btn btn-dark btn-lg gbttn " type="submit">
+              Choose Template
             </button>
           </div>
         </div>
-      </div class="card-body">
+      </div>
     </div>
+    <section id="templates">
+      <div class="row" id="tagline">
+        <h1>Time for templates!!</h1>
+        <h2>Just choose the template that best suits you</h2>
+      </div>  
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Template 1</h2>
+              <img id="tem" src="images/11.png" alt="template1">
+              <button onclick="generateCV()" class="submitBtn" class="btn btn-dark btn-lg gbttn " type="submit">
+                Create CV
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Template 2</h2>
+              <img id="tem" src="images/31.png" alt="template2">
+              <button onclick="createtwoCV()" class="submitBtn" class="btn btn-dark btn-lg gbttn " type="submit">
+                Create CV
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="footer">
+      <div>
+        <p class="uem">Made with ❤️ at UEM</p>
+      
+        <a class="univ" href="https://uem.edu.in/">University of Engineering & Management</a>
+        <p>New Town, University Area, Plot No. III</p>
+        <p>B/5, New Town Rd, Action Area III, Kolkata 700160.</p>
+      </div>
+    </section>
+
     <!-- cv template -->
 
     <div class="container " id="cv-template">
@@ -238,7 +259,7 @@
 
           <!-- work Experience -->
 
-          <div class="mt-4">
+          <div class="mt-4" id="weHead">
             <div class="card-header background">
               <h3>Work Experience</h3>
             </div>
@@ -261,7 +282,7 @@
           </div>
 
           <!-- Skill Sets -->
-          <div class="mt-4">
+          <div class="mt-4" id="skillHead">
             <div class="card-header background">
               <h3>Skill Sets</h3>
             </div>
@@ -285,7 +306,7 @@
 
           <!-- academic Qualification  -->
 
-          <div class="mt-4">
+          <div class="mt-4" id="aqHead">
             <div class="card-header background">
               <h3>Academic Qualification</h3>
             </div>
@@ -308,17 +329,154 @@
           </div>
 
           <div class="container mt-3 text-center">
-            <button onclick="printCV()" class="btn btn-dark btn-lg backgroundt">Print CV</button>
+            <button onclick="printCV()" class="btn btn-dark btn-lg backgroundt" id="print">Print CV</button>
           </div>
         
       </div>
     </div>
+ 
+    <!-- CV TEMPLATE 2 -->
+        <!-- cv template -->
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
+        <div class="container " id="cv-template2">
+          <div >
+            <div class="  py-2 ">
+              <!-- first col  -->
+              <div class="row background2 rowbg2">
+                
+                <div class="col-md-9 details">
+                  <p class="header1" id="nameT2">Your Name</p>
+                  <p class="header2" id="contactT2">Web Developer</p>
+                  <p class="header4" id="emailT2">koushikd2004@gmail.com</p>
+                  <p class="header3" id="addressT2">Newtwon Kolkata, India</p>
+    
+                </div>
+                <div class="col-md-3">
+                  <img
+                src="images/image.jpg"
+                alt=""
+                class="img-fluid myimg2"
+                id="imgTemplate2"
+              />
+                </div>
+              </div>
+              
+    
+                
+    
+                
+            </div>
+            
+              
+             
+    
+              <!-- skills -->
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="mt-4" id="skillHead2">
+                    <div class="card-header background2">
+                      <h3>Skill Sets</h3>
+                    </div>
+                    <div class="card-body">
+                      <ul id="skillT2">
+                        <li>
+                          Web Designing
+                        </li>
+                        <li>
+                          Backend Development
+                        </li>
+                        <li>
+                          JavaScript
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-9">
+
+                  <div >
+                    <div class="card-header background2 ">
+                      <h3>About me</h3>
+                    </div>
+                    <div class="card-body">
+                      <p id="objectiveT2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                        quam quos totam dolorem commodi earum, labore consectetur
+                        excepturi reiciendis, a fugiat porro rem mollitia inventore
+                        eligendi, saepe libero hic aliquam? Iure molestias natus dolore
+                        animi, possimus eius! Atque nesciunt eveniet exercitationem enim
+                        nisi quis. Consequatur aliquam reiciendis officiis laboriosam
+                        numquam?
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+    
+              
+    
+              <!-- work Experience -->
+    
+              <div class="mt-4" id="weHead2">
+                <div class="card-header background2">
+                  <h3>Work Experience</h3>
+                </div>
+                <div class="card-body">
+                  <ul id="weT2">
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Odit, ad.
+                    </li>
+                    <hr class="linebreak">
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Odit, ad.
+                    </li>
+                    <hr class="linebreak">
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Odit, ad.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+    
+              <!-- Skill Sets -->
+              
+    
+              <!-- academic Qualification  -->
+    
+              <div class="mt-4" id="aqHead2">
+                <div class="card-header background2">
+                  <h3>Academic Qualification</h3>
+                </div>
+                <div class="card-body">
+                  <ul id="aqT2">
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Odit, ad.
+                    </li>
+                    <hr class="linebreak">
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Odit, ad.
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+    
+              <div class="container mt-3 text-center">
+                <button onclick="printCV()" class="btn btn-dark btn-lg backgroundt" id="print">Print CV</button>
+              </div>
+            
+          </div>
+        </div>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
 </html>
